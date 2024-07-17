@@ -63,7 +63,7 @@ export class PostService {
     const userId = 1;
     const newPost: Post = { ...post, id: this.posts.length + 1, userId, comments: [] } as Post;
     return this.http.post<Post>(this.url, newPost).pipe(
-      tap(createdPost => this.posts.push(createdPost)),
+      tap(createdPost => this.posts.unshift(createdPost)),
       catchError(this.handleError<Post>('createPost'))
     );
   }
