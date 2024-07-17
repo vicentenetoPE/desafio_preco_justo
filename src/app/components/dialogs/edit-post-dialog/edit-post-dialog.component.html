@@ -1,0 +1,49 @@
+<div class="w-full max-w-md">
+  
+  <form class="rounded px-8 pt-6 pb-8 mb-4" (submit)="handleSubmit($event)" [formGroup]="editPostForm">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14 m-auto stroke-blue-900 mb-4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+    </svg>
+    <div class="mb-4 mt-8">
+      <label class="block text-gray-700 text-lg font-bold mb-2" for="body">
+        Título
+      </label>
+      <input
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="body"
+        type="text"
+        placeholder="Título"
+        formControlName="title"
+      />
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-lg font-bold mb-2" for="password">
+        Corpo do post
+      </label>
+      <textarea
+      formControlName="body"
+      
+        rows="7"
+        cols="200"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+        id="body"
+        placeholder="Texto do post"
+      ></textarea>
+    </div>
+    <div class="flex items-center justify-end gap-5">
+      <button
+        type="button"
+        (click)="dialogRef.close()"
+        class="bg-transparent hover:bg-gray-200 text-blue-700 font-semibold hover:text-blue-500 py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+      >
+        Cancelar
+      </button>
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Postar
+      </button>
+    </div>
+  </form>
+</div>
